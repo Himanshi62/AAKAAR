@@ -46,6 +46,13 @@
             <h5 class="form">here is the link <a href="www.google.com">click</a> to the Gform that you need to fill as a part of task 0. Please note that this is madatory task that every CR has to do otherwise your canditure will be rejected. </h5>
             <img src={{picture}} width="50px" class="rounded-circle" alt="">
        </div>
+
+       <div class="border-2">
+          <h4 class="text-warning">Checking the Facts</h4>
+          {% for obj in objects %}
+            <h2 class="name">{{obj.crid}}</h2>
+          {% endfor %}
+       </div>
        {% endif %}
     </div>
 

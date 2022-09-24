@@ -11,6 +11,14 @@ class TaskZero(models.Model):
     phone = models.CharField(max_length=10)
 
     def __str__(self):
-        return self.firstName
+        return (
+            f"{self.firstName} "
+            f"{self.crid} "
+            f"{self.lasttName} "
+            f"{self.city} "
+            f"{self.phone} "
+        )
+    
+
 
 

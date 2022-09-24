@@ -6,6 +6,9 @@ import pandas as pd
 import numpy as np
 from ranklist import df
 
+## import data tables from database
+from .models import TaskZero
+
 print(f"df from views : {df} ")
 
 # Create your views here.
@@ -32,6 +35,6 @@ def dashboard(request):
             rank = i+1
             break
     
-
-    return render(request, "dashboard.html", {'email': email, "name":name[0], "picture": picture, "CRID":"AK"+str(current_user_id), "rank":rank})
+    objects = TaskZero.objects.all()
+    return render(request, "dashboard.html", {'email': email, "name":name[0], "picture": picture, "CRID":"AK"+str(current_user_id), "rank":rank, "objects":objects})
 
