@@ -21,7 +21,6 @@ from django.conf.urls.static import static
 urlpatterns = [
     path('', include('aakarapp.urls')),
     path("admin/", admin.site.urls),
-] 
+] + static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
 
 
-# https://www.codewithharry.com/videos/python-django-tutorials-hindi-28/
