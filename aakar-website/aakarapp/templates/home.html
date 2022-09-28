@@ -8,6 +8,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
   <link rel="stylesheet" href=
   "https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
           integrity=
@@ -21,6 +22,7 @@
   "sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
           crossorigin="anonymous">
           </script>
+          <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
       <script src=
   "https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"
           integrity=
@@ -60,25 +62,64 @@
 
 
 
-  <header id="header" class="fixed-top d-flex align-items-center header-transparent">
+  <!-- <header id="header" class="fixed-top d-flex align-items-center header-transparent">
     <div class="container d-flex justify-content-between align-items-center">
       <div class="logo">
-        <!-- <h1 class="text-light"><a href="index.html"><span>
-              <h1>AAKAAR</h1>
-            </span></a></h1> -->
             <img src="{% static 'img/logo.png' %}" width="150px" alt="My image">
       </div>
+      <div class="blog"><h1 class="title">Home</h1></div>
+      <div class="blog"><h1 class="title">Blog</h1></div>
+      <div class="blog"><h1 class="title">competitions</h1></div>
+      <div class="blog"><h1 class="title">FAQ</h1></div>
       {% if user.is_authenticated %}
       <a class="btn btn-lg btn-danger" href="{% url 'account_logout' %}">Log out</a>
       {% else %}
       <a class="btn btn-lg btn-danger" href="{% provider_login_url 'google' %}">Login</a>
       {% endif %}
     </div>
-  </header>
+  </header> -->
+  
+
+  <nav class="navbar navbar-expand-lg fixed-top" style="background-color: #ffffff;">
+    <div class="container-fluid">
+      <img src="{% static 'img/logo.png' %}" width="100px" alt="My image">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#about">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="#incentive">Incentives</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#testinomial">Testinomials</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="#faq">FAQ</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link active" href="#team">Contact</a>
+          </li>
+         
+        </ul>
+        <form class="d-flex" role="search">
+          <!-- <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"> -->
+          {% if user.is_authenticated %}
+      <a class="btn btn-lg btn-danger" href="{% url 'account_logout' %}">Log out</a>
+      {% else %}
+      <a class="btn btn-lg btn-danger" href="{% provider_login_url 'google' %}">Login</a>
+      {% endif %}
+        </form>
+      </div>
+    </div>
+  </nav>
 
 
-  <section id="hero" class="d-flex justify-content-center align-items-center" style="background-image: url(static/img/img3.png); background-size: cover; background-repeat: no-repeat; ">
-    <div class="container">
+  <section id="hero" class="d-flex justify-content-center align-items-center" style="background-image: url(static/img/bg1.png);  background-size: cover; background-repeat: no-repeat; ">
+    <div class="container" >
       <div style="font-size: 60px; font-weight: bolder;">College</div>
       <div style="font-size: 60px; margin-top: -27px; padding-top: -5px; font-weight: bolder;">Representative</div>
       <div style="font-size: 60px; margin-top: -27px; font-weight: bolder;">Program</div>
@@ -91,59 +132,50 @@
 
 
 
-
-<!-- <section>
-  <header class="masthead">
+  <!-- <section>
     <div class="container">
-        <div class="masthead-subheading">Welcome To Our Studio!</div>
-        <div class="masthead-heading text-uppercase">It's Nice To Meet You</div>
-        <a class="btn btn-primary btn-xl text-uppercase" href="#services">Tell Me More</a>
+      <div class="row aos-init aos-animate" data-aos="fade-up">
+        <div class="col-md-5 order-1 order-md-2" > <img src="{% static 'img/background.jpg' %}" width="500px" height="500px" class="img-fluid" alt=""></div>
+        <div class="col-md-7 pt-5 order-2 order-md-1 section-aakaar" style="border: 2px red;">
+          <h1 style="font-family: MS Reference Sans Serif; font-weight: 600;">COLLEGE</h1>
+          <h1 style="font-family: MS Reference Sans Serif; font-weight: 600;">REPRESENTATIVE</h1>
+          <h1 style="font-family: MS Reference Sans Serif; font-weight: 600;">PROGRAM</h1>
+
+        </div>
+      </div>
     </div>
-</header>
-</section> -->
+  </section> -->
+
+
+<!-- ########################################################################### -->
 
 
 
 
 
-
-
-  <section class="features">
+  <section class="features" id="about" style="padding-top: 50px;">
     <div class="container">
       <div class="section-title ">
-        <!-- <h1 class="thirteen">ABOUT US</h1> -->
-        <h2 >ABOUT US</h2>
-        <p style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-size: 23px; color: black; font-weight: 530;">Aakaar is the annual festival of the Department of Civil Engineering, IIT Bombay comprising a range of engaging competitions, workshops, lecture series, panel discussions, industrial talks, exhibitions, and various entertaining learning events. Since its inception in 2009, it has become Asia’s largest Departmental College festival. Aakaar serves as a forum for discussion and offers opportunities for developing new skills for engineering students across India.</p>
+        <h2 >ABOUT AAKAAR</h2>
+        <p style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-size: 20px; color: black; font-weight: 530;">Aakaar is the annual festival of the Department of Civil Engineering, IIT Bombay comprising a range of engaging competitions, workshops, lecture series, panel discussions, industrial talks, exhibitions, and various entertaining learning events. Since its inception in 2009, it has become Asia’s largest Departmental College festival. Aakaar serves as a forum for discussion and offers opportunities for developing new skills for engineering students across India.</p>
       </div>
-      <!-- <div class="row aos-init aos-animate" data-aos="fade-up">
-        <div class="col-md-5"> <img src="https://bootstrapmade.com/demo/templates/Moderna/assets/img/features-1.svg" class="img-fluid" alt=""></div>
-        <div class="col-md-7 pt-4 section-aakaar">
-          <h2>About Aakaar</h2>
-          <p style="font-family: cursive; font-size: 20px">The College Representative Program is the core of Aakaar’s outreach initiative. We at Aakaar hope to connect with college students across India to pique their interest in Civil Engineering and provide a platform to pursue the same. The College Representative Program aids in the realization of this goal. The College Representative Program enables you to create a strong network of like-minded people who can support your future professional pursuits while gaining invaluable experience, organizing unique events, and putting on spectacular events.</p>
-        </div>
-      </div> -->
       <div class="row aos-init aos-animate" data-aos="fade-up">
         <div class="col-md-5 order-1 order-md-2" style="padding-top: 90px"> <img src="https://bootstrapmade.com/demo/templates/Moderna/assets/img/features-1.svg" class="img-fluid" alt=""></div>
         <div class="col-md-7 pt-5 order-2 order-md-1 section-aakaar">
-          <h2 style="font-family: MS Reference Sans Serif; font-weight: 600;">ABOUT AAKAAR</h2>
-          <p style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-size: 23px; color: black; font-weight: 530;">The College Representative Program is the core of Aakaar’s outreach initiative. We at Aakaar hope to connect with college students across India to pique their interest in Civil Engineering and provide a platform to pursue the same. The College Representative Program aids in the realization of this goal. The College Representative Program enables you to create a strong network of like-minded people who can support your future professional pursuits while gaining invaluable experience, organizing unique events, and putting on spectacular events.</p>
+          <h2 style="font-family: MS Reference Sans Serif; font-weight: 600;">CR PROGRAM</h2>
+          <p style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-size: 20px; color: black; font-weight: 530;">The College Representative Program is the core of Aakaar’s outreach initiative. We at Aakaar hope to connect with college students across India to pique their interest in Civil Engineering and provide a platform to pursue the same. The College Representative Program aids in the realization of this goal. The College Representative Program enables you to create a strong network of like-minded people who can support your future professional pursuits while gaining invaluable experience, organizing unique events, and putting on spectacular events.</p>
         </div>
       </div>
     </div>
   </section>
 
+
+
+<!-- ############################################################################################# -->
+
+
   <section style="padding-top: 15px ;">
-    <!-- <div class="container">
-      <div class="row justify-content-between">
-        <div class="col-12 col-md-10 col-lg-8 col-xl-7 col-xxl-6">
-          <h2 class="section-ach">Achievements</h2>
-          <p class="text-secondary mb-4 mb-md-5">Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Pellentesque et neque id ligula mattis commodo.</p>
-          <hr class="w-50 mx-auto mb-0 text-secondary">
-        </div>
-      </div>
-    </div> -->
-  
-    <div class="container overflow-hidden">
+      <div class="container overflow-hidden">
       <div class="row gy-5 gy-md-6 gy-lg-0">
         <div class="col-4 col-lg-4">
           <div class="text-center">
@@ -167,17 +199,6 @@
             <p class="text m-0" style="font-weight: 600;">Class Representatives</p>
           </div>
         </div>
-        <!-- <div class="col-6 col-lg-3">
-          <div class="text-center">
-            <div class="d-flex align-items-center justify-content-center bg-primary rounded-circle w-100px h-100px mb-3 mx-auto">
-              <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor" class="bi bi-briefcase text-white" viewBox="0 0 16 16">
-                <path d="M6.5 1A1.5 1.5 0 0 0 5 2.5V3H1.5A1.5 1.5 0 0 0 0 4.5v8A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-8A1.5 1.5 0 0 0 14.5 3H11v-.5A1.5 1.5 0 0 0 9.5 1h-3zm0 1h3a.5.5 0 0 1 .5.5V3H6v-.5a.5.5 0 0 1 .5-.5zm1.886 6.914L15 7.151V12.5a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5V7.15l6.614 1.764a1.5 1.5 0 0 0 .772 0zM1.5 4h13a.5.5 0 0 1 .5.5v1.616L8.129 7.948a.5.5 0 0 1-.258 0L1 6.116V4.5a.5.5 0 0 1 .5-.5z" />
-              </svg>
-            </div>
-            <h5 class="display-6 fw-bold m-1">250K</h5>
-            <p class="text-secondary m-0">Finished Projects</p>
-          </div>
-        </div> -->
         <div class="col-4 col-lg-3">
           <div class="text-center">
             <div class="d-flex align-items-center justify-content-center rounded-circle w-100px h-100px mb-3 mx-auto" style="background-color: #3D1A43;">
@@ -194,6 +215,8 @@
     </div>
   </section>
 
+
+  <!-- ###################################################################################### -->
 
 <section style="padding-top: 20px;">
 
@@ -241,124 +264,32 @@
   </div>
 </section>
 
+<!-- ################################################################################# -->
 
-
-<!-- <section style="padding-top: 10px;">
-  <div class="container">
-    <div class="section-title ">
-      <h2 >Incentives</h2>
-    </div>
-<div class="row" data-masonry="{&quot;percentPosition&quot;: true }" style="position: relative; height: 1068px;">
-  <div class="col-sm-6 col-lg-4 mb-4" style="position: absolute; left: 0%; top: 0px;">
-    <div class="card">
-<img src="https://reba.global/static/e540e4e0cd0158a14cc97a912600dc3b/E540-1575493572HowtoimplementMAIN.jpg" alt="" width="100%">
-      <div class="card-body">
-        <h5 class="card-title">Exclusive personal merchandise to Top monthly CRs</h5>
-      </div>
-    </div>
-  </div>
-  <div class="col-sm-6 col-lg-4 mb-4" style="position: absolute; left: 50%; top: 0px;">
-    <div class="card p-3">
-      <figure class="p-3 mb-0">
-        <blockquote class="blockquote">
-          <p>Free accommodation inside IIT Bombay during the main fest for top performing CRs</p>
-        </blockquote>
-      </figure>
-    </div>
-  </div>
-  <div class="col-sm-6 col-lg-4 mb-4" style="position: absolute; left: 50%; top: 201px;">
-    <div class="card">
-      <svg class="bd-placeholder-img card-img-top" width="100%" height="200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Image cap" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#868e96"></rect><text x="50%" y="50%" fill="#dee2e6" dy=".3em">Image cap</text></svg>
-
-      <div class="card-body">
-        <h5 class="card-title">Freebie</h5>
-        <p class="card-text">Free courses/coupons to top performers.</p>
-      </div>
-    </div>
-  </div>
-  <div class="col-sm-6 col-lg-4 mb-4" style="position: absolute; left: 0%; top: 400px;">
-    <div class="card text-center p-3" style="background-color: #D9B3D9;">
-      <figure class="mb-0">
-        <blockquote class="blockquote">
-          <p style="color: black;">Top performing CRs will get a Letter of Recommendation from Aakaar, IIT Bombay.</p>
-        </blockquote>
-       
-      </figure>
-    </div>
-  </div>
-  <div class="col-sm-6 col-lg-4 mb-4" style="position: absolute; left: 0%; top: 525px;">
-    <div class="card text-center">
-      <div class="card-body">
-        <h5 class="card-title">Workshop</h5>
-        <p class="card-text">Free Paid Workshops in main event for top College Representatives.</p>
-      </div>
-    </div>
-  </div>
-  <div class="col-sm-6 col-lg-4 mb-4" style="position: absolute; left: 50%; top: 579px;">
-    <div class="card">
-      <svg class="bd-placeholder-img card-img" width="100%" height="260" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Card image" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#868e96"></rect><text x="50%" y="50%" fill="#dee2e6" dy=".3em">Card image</text></svg>
-
-    </div>
-  </div>
-  <div class="col-sm-6 col-lg-4 mb-4" style="position: absolute; left: 0%; top: 703px;">
-    <div class="card p-3 text-end">
-      <figure class="mb-0">
-        <blockquote class="blockquote">
-          <p>Monthly shoutout to top 5 CRs from the official Instagram page of Aakaar.</p>
-        </blockquote>
-      </figure>
-    </div>
-  </div>
-  <div class="col-sm-6 col-lg-4 mb-4" style="position: absolute; left: 0%; top: 842px;">
-    <div class="card">
-      <div class="card-body">
-        <h5 class="card-title">Certification</h5>
-        <p class="card-text">Certificate of Internship upon satisfying the minimum criteria
-        </p>
-      </div>
-    </div>
-  </div>
-</div>
-</div>
-</section> -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<section style="padding-top: 5px;">
+<section style="padding-top: 5px;" id="incentive">
 
 <div class="container">
   <h2 style="font-family: MS Reference Sans Serif; font-weight: 600;">INCENTITIVES</h2>
   <div class="row g-4 py-5 row-cols-1 row-cols-lg-4">
-    <div class="feature col" style="background-color: #ebdff2; border-radius: 10px; padding-top: 15px;">
+    <div class="feature col" style="border-radius: 10px; padding-top: 15px; border-left: 2px solid #3d1a43;">
       <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="#3D1A43" class="bi bi-gift-fill" viewBox="0 0 16 16">
         <path d="M3 2.5a2.5 2.5 0 0 1 5 0 2.5 2.5 0 0 1 5 0v.006c0 .07 0 .27-.038.494H15a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h2.038A2.968 2.968 0 0 1 3 2.506V2.5zm1.068.5H7v-.5a1.5 1.5 0 1 0-3 0c0 .085.002.274.045.43a.522.522 0 0 0 .023.07zM9 3h2.932a.56.56 0 0 0 .023-.07c.043-.156.045-.345.045-.43a1.5 1.5 0 0 0-3 0V3zm6 4v7.5a1.5 1.5 0 0 1-1.5 1.5H9V7h6zM2.5 16A1.5 1.5 0 0 1 1 14.5V7h6v9H2.5z"/>
       </svg>
       <p style="padding-top: 20px; font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-size: 18px;">Hoodies and exciting gifts to overall top performing CRs</p>
     </div>
-    <div class="feature col">
+    <div class="feature col" style="border-radius: 10px; padding-top: 15px; border-left: 2px solid #3d1a43;">
       <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="#3D1A43" class="bi bi-house-door-fill" viewBox="0 0 16 16">
         <path d="M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5z"/>
       </svg> 
       <p style="padding-top: 20px; font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-size: 18px;">Free accommodation inside IIT Bombay during the main fest for top performing CRs</p>
     </div>
-    <div class="feature col" style="background-color: #ebdff2; border-radius: 10px; padding-top: 15px;">
+    <div class="feature col" style="border-radius: 10px; padding-top: 15px; border-left: 2px solid #3d1a43;">
       <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="#3D1A43" class="bi bi-calendar-event-fill" viewBox="0 0 16 16">
         <path d="M4 .5a.5.5 0 0 0-1 0V1H2a2 2 0 0 0-2 2v1h16V3a2 2 0 0 0-2-2h-1V.5a.5.5 0 0 0-1 0V1H4V.5zM16 14V5H0v9a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2zm-3.5-7h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5z"/>
       </svg>
       <p style="padding-top: 20px; font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-size: 18px;">Chance to attend events/workshop during the tenure</p>
     </div>
-    <div class="feature col">
+    <div class="feature col" style="border-radius: 10px; padding-top: 15px; border-left: 2px solid #3d1a43;">
       <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="#3D1A43" class="bi bi-person-video3" viewBox="0 0 16 16">
         <path d="M14 9.5a2 2 0 1 1-4 0 2 2 0 0 1 4 0Zm-6 5.7c0 .8.8.8.8.8h6.4s.8 0 .8-.8-.8-3.2-4-3.2-4 2.4-4 3.2Z"/>
         <path d="M2 2a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h5.243c.122-.326.295-.668.526-1H2a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v7.81c.353.23.656.496.91.783.059-.187.09-.386.09-.593V4a2 2 0 0 0-2-2H2Z"/>
@@ -367,25 +298,25 @@
     </div>
   </div>
   <div class="row g-4 py-0 row-cols-1 row-cols-lg-4">
-    <div class="feature col">
+    <div class="feature col" style="border-radius: 10px; padding-top: 15px; border-left: 2px solid #3d1a43;">
       <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="#3D1A43" class="bi bi-instagram" viewBox="0 0 16 16">
         <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"/>
       </svg>
       <p style="padding-top: 20px; font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-size: 18px;">Monthly shoutout to top 5 CRs from the official Instagram page of Aakaar</p>
     </div>
-    <div class="feature col" style="background-color: #ebdff2; border-radius: 10px; padding-top: 15px;">
+    <div class="feature col" style="border-radius: 10px; padding-top: 15px; border-left: 2px solid #3d1a43;">
       <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="#3D1A43" class="bi bi-hand-thumbs-up-fill" viewBox="0 0 16 16">
         <path d="M6.956 1.745C7.021.81 7.908.087 8.864.325l.261.066c.463.116.874.456 1.012.965.22.816.533 2.511.062 4.51a9.84 9.84 0 0 1 .443-.051c.713-.065 1.669-.072 2.516.21.518.173.994.681 1.2 1.273.184.532.16 1.162-.234 1.733.058.119.103.242.138.363.077.27.113.567.113.856 0 .289-.036.586-.113.856-.039.135-.09.273-.16.404.169.387.107.819-.003 1.148a3.163 3.163 0 0 1-.488.901c.054.152.076.312.076.465 0 .305-.089.625-.253.912C13.1 15.522 12.437 16 11.5 16H8c-.605 0-1.07-.081-1.466-.218a4.82 4.82 0 0 1-.97-.484l-.048-.03c-.504-.307-.999-.609-2.068-.722C2.682 14.464 2 13.846 2 13V9c0-.85.685-1.432 1.357-1.615.849-.232 1.574-.787 2.132-1.41.56-.627.914-1.28 1.039-1.639.199-.575.356-1.539.428-2.59z"/>
       </svg>
       <p style="padding-top: 20px; font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-size: 18px;">Exclusive personal merchandise to Top monthly CRs</p>
     </div>
-    <div class="feature col">
+    <div class="feature col" style="border-radius: 10px; padding-top: 15px; border-left: 2px solid #3d1a43;">
       <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="#3D1A43" class="bi bi-trophy-fill" viewBox="0 0 16 16">
         <path d="M2.5.5A.5.5 0 0 1 3 0h10a.5.5 0 0 1 .5.5c0 .538-.012 1.05-.034 1.536a3 3 0 1 1-1.133 5.89c-.79 1.865-1.878 2.777-2.833 3.011v2.173l1.425.356c.194.048.377.135.537.255L13.3 15.1a.5.5 0 0 1-.3.9H3a.5.5 0 0 1-.3-.9l1.838-1.379c.16-.12.343-.207.537-.255L6.5 13.11v-2.173c-.955-.234-2.043-1.146-2.833-3.012a3 3 0 1 1-1.132-5.89A33.076 33.076 0 0 1 2.5.5zm.099 2.54a2 2 0 0 0 .72 3.935c-.333-1.05-.588-2.346-.72-3.935zm10.083 3.935a2 2 0 0 0 .72-3.935c-.133 1.59-.388 2.885-.72 3.935z"/>
       </svg> 
       <p style="padding-top: 20px; font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-size: 18px;">Certificate of Internship upon satisfying the minimum criteria</p>
     </div>
-    <div class="feature col" style="background-color: #ebdff2; border-radius: 10px; padding-top: 15px;">
+    <div class="feature col" style="border-radius: 10px; padding-top: 15px; border-left: 2px solid #3d1a43;">
       <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="#3D1A43" class="bi bi-award" viewBox="0 0 16 16">
         <path d="M9.669.864 8 0 6.331.864l-1.858.282-.842 1.68-1.337 1.32L2.6 6l-.306 1.854 1.337 1.32.842 1.68 1.858.282L8 12l1.669-.864 1.858-.282.842-1.68 1.337-1.32L13.4 6l.306-1.854-1.337-1.32-.842-1.68L9.669.864zm1.196 1.193.684 1.365 1.086 1.072L12.387 6l.248 1.506-1.086 1.072-.684 1.365-1.51.229L8 10.874l-1.355-.702-1.51-.229-.684-1.365-1.086-1.072L3.614 6l-.25-1.506 1.087-1.072.684-1.365 1.51-.229L8 1.126l1.356.702 1.509.229z"/>
         <path d="M4 11.794V16l4-1 4 1v-4.206l-2.018.306L8 13.126 6.018 12.1 4 11.794z"/>
@@ -397,10 +328,10 @@
 </section>
 
 
+<!-- ################################################################################ -->
 
 
-
-<section style="padding-top: 5px;">
+<section style="padding-top: 5px;" id="testinomial">
 
 <div class="container">
   <h2 style="font-family: MS Reference Sans Serif; font-weight: 600;">TESTINOMIALS</h2>
@@ -411,7 +342,7 @@
           <div class="carousel-caption">
             <p>During my internship, I learned how to communicate and build networks with people. After Completion of the internship, I received LOR (Letter of recommendation). Students eager to gain new skills and want to demonstrate their leadership qualities should consider this internship.
             </p>
-            <img src="https://i.imgur.com/lE89Aey.jpg">
+            <img src="{% static 'img/Nazir.jpg' %}" width="100px" height="100px">
             <div id="image-caption">Inzamam Nazir (Rank 1)</div>
             <p>DR B.C ROY ENGINEERING COLLEGE, DURGAPUR </p>
           </div>   
@@ -419,7 +350,7 @@
         <div class="carousel-item">
           <div class="carousel-caption">
             <p>I enjoyed & learned a lot in this internship and improved my leadership and communication skills. I talked to many strangers in this internship and became more confident. The experience as a Campus Representative Intern was mind-blowing; one gets to learn many things from the team.</p>
-              <img src="https://i.imgur.com/QptVdsp.jpg" class="img-fluid">
+            <img src="{% static 'img/Saravana.jpg' %}" width="100px" height="100px">
               <div id="image-caption">G. Saravana Kumar (Rank 2)</div>
               <p>Velammal College of Engineering and Technology, Madurai</p>
           </div>   
@@ -428,7 +359,7 @@
           <div class="carousel-caption">
             <p>Thank you, Aakaar, for giving me this fantastic opportunity. Showcasing my management skills got much better by being a part. I was lucky to be a part of various events and workshops conducted by the Aakaar.The tenure was significant both at the personal level and at the corporate level.
             </p>
-              <img src="https://i.imgur.com/jQWThIn.jpg" class="img-fluid">
+            <img src="{% static 'img/Sarfaraz.jpg' %}" width="100px" height="100px">
               <div id="image-caption">Sarfaraz Ahmad (Rank 4)</div>
               <p>Future Institute of Engineering and Management, Kolkata</p>
           </div>   
@@ -437,7 +368,7 @@
           <div class="carousel-caption">
             <p>Overall it was a wonderful experience. I learned various skills and worked on them throughout the process. Aakaar provides a unique work experience, and as a part of being a top CAs, I received goodies too. Looking forward to getting an opportunity to be a part of it again.
             </p>
-              <img src="https://i.imgur.com/jQWThIn.jpg" class="img-fluid">
+            <img src="{% static 'img/Radhika.jpeg' %}" width="100px" height="100px">
               <div id="image-caption">Radhika Agarwal (Rank 9)</div>
               <p>Glbajaj group of Institute, Mathura</p>
           </div>   
@@ -446,7 +377,7 @@
           <div class="carousel-caption">
             <p>This internship provided me with an opportunity to learn skills in various domains like Social Media Marketing, Networking, Management, and Leadership. It's one of the top opportunities available in the market for someone who is about to gain initial experience with internships. It will prepare you for the upcoming corporate environment. Kudos to team Aakaar for the smooth management of this internship program.
             </p>
-              <img src="https://i.imgur.com/jQWThIn.jpg" class="img-fluid">
+            <img src="{% static 'img/Premveer.png' %}" width="100px" height="100px">
               <div id="image-caption">Premveer Singh (Rank 29)</div>
               <p>Indian Institute of Technology Jammu</p>
           </div>   
@@ -467,8 +398,11 @@
 
 
 
-<!-- <section style="padding-top: 5px;"> -->
-  <section class="accordion-section clearfix mt-3" aria-label="Question Accordions" style="padding-top: 5px;">
+<!-- ############################################################### -->
+
+
+
+  <section class="accordion-section clearfix mt-3" aria-label="Question Accordions" style="padding-top: 5px;" id="faq">
     <div class="container">
     
       <h2>Frequently Asked Questions </h2>
@@ -555,74 +489,74 @@
     
     </div>
   </section>
-<!-- </section> -->
 
 
-  <!-- <div class="container">
-    <header class="blog-header lh-1 py-0">
-      <div class="row flex-nowrap justify-content-between align-items-center">
-        <div class="col-4 pt-1">
+  <!-- ############################################################################# -->
+
+
+  <section class="page-section" id="team">
+    <div class="container">
+        <div class="text-center">
+            <h2 class="section-heading text-uppercase">CONTACT US</h2>
+            <!-- <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3> -->
         </div>
-        <div class="col-4 text-center">
-          <a class="blog-header-logo text-dark" href="#">
-            <img src="static\img\logo.png" alt="" width="200px" height="100px">
-          </a>
+        <div class="row">
+            <div class="col-lg-6 text-center">
+                <div class="team-member">
+                    <img class="mx-auto rounded-circle" src="{% static 'img/akshat.jpeg' %}" width="240px" height="230px" alt="..." style="border-bottom: 5px solid #3D1A43;">
+                    <h4>Akshat Jain</h4>
+                    <p class="text-muted">Media and Publicity Manager</p>
+                    <a class="btn btn-social mx-2" href="https://www.instagram.com/akshatjain900/"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="#3d1a43" class="bi bi-instagram" viewBox="0 0 16 16">
+                      <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"/>
+                    </svg></a>                    
+                    <a class="btn  btn-social mx-2" href="https://www.facebook.com/akshat1jain"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="#3d1a43" class="bi bi-facebook" viewBox="0 0 16 16">
+                      <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"/>
+                    </svg></a>
+                    <a class="btn btn-social mx-2" href="https://www.linkedin.com/in/akshat-jain-03809a1ba/"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="#3d1a43" class="bi bi-linkedin" viewBox="0 0 16 16">
+                      <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z"/>
+                    </svg></a>
+                </div>
+            </div>
+
+            <div class="col-lg-6 text-center">
+                <div class="team-member">
+                  <img class="mx-auto rounded-circle" src="{% static 'img/Dinesh.jpg' %}" width="240px" height="230px" alt="..." style="border-bottom: 5px solid #3D1A43;">
+                  <h4>Dinesh</h4>
+                    <p class="text-muted">Media and Publicity Manager</p>
+                    <a class="btn btn-social mx-2" href="https://www.instagram.com/dineshchahar2003/"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="#3d1a43" class="bi bi-instagram" viewBox="0 0 16 16">
+                      <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"/>
+                    </svg></a>                    
+                    <a class="btn  btn-social mx-2" href="https://www.facebook.com/dinesh.chahar.96742"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="#3d1a43" class="bi bi-facebook" viewBox="0 0 16 16">
+                      <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"/>
+                    </svg></a>
+                    <a class="btn btn-social mx-2" href="https://www.linkedin.com/in/dinesh-kumar-68b779239/"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="#3d1a43" class="bi bi-linkedin" viewBox="0 0 16 16">
+                      <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z"/>
+                    </svg></a>
+                                  </div>
+            </div>
         </div>
-        <div class="col-4 d-flex justify-content-end align-items-center">
-          
-          {% if user.is_authenticated %}
-          <a class="btn btn-lg btn-danger" href="{% url 'account_logout' %}">Log out</a>
-          {% else %}
-          <a class="btn btn-lg btn-danger" href="{% provider_login_url 'google' %}">Login</a>
-          {% endif %}
-        </div>
-      </div>
-    </header>
-  </div> -->
+    </div>
+</section>
 
 
-  <!-- <div class="container">
-    <div class="p-4 p-md-5 mb-4 rounded"
-      style="background-image: url(https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1); opacity: 0.5;">
-      <div class="col-md-6 px-0">
-        <h1 class="display-4 fst-italic">Title of a longer featured blog post</h1>
-        <p class="lead my-3">Multiple lines of text that form the lede, informing new readers quickly and efficiently
-          about what’s most interesting in this post’s contents.</p>
-        <p class="lead mb-0"><a href="#" class="text-white fw-bold">Continue reading...</a></p>
-      </div>
-    </div> -->
-  <!-- <center> -->
-  <!-- <div> -->
-  <!-- <div class="col-md-6 px-0"> -->
-  <!-- <img src="https://images.pexels.com/photos/6850332/pexels-photo-6850332.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" height="500px" style="border-radius: 10px;"> -->
-  <!-- <h1 class="display-4 fst-italic">Title of a longer featured blog post</h1>
-          <p class="lead my-3">Multiple lines of text that form the lede, informing new readers quickly and efficiently about what’s most interesting in this post’s contents.</p>
-          <p class="lead mb-0"><a href="#" class="text-white fw-bold">Continue reading...</a></p> -->
-  <!-- </div> -->
-  <!-- </div> -->
-  <!-- </center> -->
-  <!-- </div> -->
 
-
-  <!-- <div class="container">
-    <center>
-      <h1>About Us</h1>
-    </center>
-    <p>This is some additional paragraph placeholder content. It has been written to fill the available space and show
-      how a longer snippet of text affects the surrounding content. We'll repeat it often to keep the demonstration
-      flowing, so be on the lookout for this exact same string of text.</p>
+<!-- #################################################################### -->
+<footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top container">
+  <div class="col-md-4 d-flex align-items-center">
+    <span class="mb-3 mb-md-0 text-muted">© Aakaar, IIT Bombay</span>
   </div>
 
-  <div class="container py-5 my-5 text-center">
-
-    <div class="home page">
-      This is home page
-    </div>
-  </div> -->
-
-  <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
-    crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script></body> -->
+  <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
+    <li class="ms-3" style="padding-right: 10px;"><a class="text-muted" href="https://www.instagram.com/aakaar_iitbombay/"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="#3d1a43" class="bi bi-instagram" viewBox="0 0 16 16">
+      <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"/>
+    </svg></a></li>
+    <li class="ms-3" style="padding-right: 5px;"><a class="text-muted" href="https://www.facebook.com/AakaariitBombay"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="#3d1a43" class="bi bi-facebook" viewBox="0 0 16 16">
+      <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"/>
+    </svg></a></li>
+    <li class="ms-3" style="padding-right: 5px;"><a class="text-muted" href="https://www.linkedin.com/company/aakaariitb/"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="#3d1a43" class="bi bi-linkedin" viewBox="0 0 16 16">
+      <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z"/>
+    </svg></a></li>
+  </ul>
+</footer>
 
 </html>

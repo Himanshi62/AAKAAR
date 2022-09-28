@@ -99,81 +99,7 @@ section {
 }
 
 
-/* @media (min-width: 768px){
-header.masthead {
-    padding-top: 17rem;
-    padding-bottom: 12.5rem;
-}
-} */
-/* header.masthead {
-    padding-top: 10.5rem;
-    padding-bottom: 25rem;
-    text-align: center;
-    color: #fff;
-    background-image: url(/static/img/img3.png);
-    background-repeat: no-repeat; */
-    /* width: 1200px;
-    height: 1000px; */
-    /* height: 800px; */
-    /* background-attachment: scroll; */
-    /* background-position: center center; */
-    /* background-size: cover; */
-    /* overflow: hidden; */
-/* } */
 
-
-
-
-/* .section-title h2::before {
-    content: "";
-    position: absolute;
-    display: block;
-    width: 120px;
-    height: 1px;
-    background: #ddd;
-    bottom: 1px;
-    left: calc(50% - 60px);
-}
-.section-title h2::after {
-    content: "";
-    position: absolute;
-    display: block;
-    width: 40px;
-    height: 3px;
-    background: #68A4C4;
-    bottom: 0;
-    left: calc(50% - 20px);
-} */
-/* .section-title h2{
-    text-decoration: underline;
-  border-bottom: 1.5px #3D1A43;
-  display: inline-block;
-  text-align: left;
-} */
-/* .section-aakaar h2{
-    display: inline-block;
-    color: #3D1A43;
-    text-shadow: 1px 1px 1px #957dad,
-             1px 2px 1px #957dad,
-             1px 3px 1px #957dad,
-             1px 4px 1px #957dad,
-             1px 5px 1px #957dad,
-             1px 6px 1px #957dad,
-             1px 10px 5px #3D1A43,
-             1px 15px 10px #3D1A43,
-             1px 20px 30px #3D1A43,
-} */
-/* .section-res{
-    text-decoration: underline;
-    border-bottom: 2px #3D1A43;
-    display: inline-block;
-}
-.section-ach{
-    text-decoration: underline;
-    border-bottom: 2px #3D1A43;
-    display: inline-block;
-    text-align: left;
-} */
 
 
 .g-6,
@@ -316,14 +242,6 @@ header.masthead {
 
 
 
-
-/* body{
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    background-color: rgb(233, 150, 150);
-    font-family: 'Open Sans';
-} */
 #demo{
     background: linear-gradient(112deg, #ffffff 50%, #ebdff2 50%);
     max-width: 900px;

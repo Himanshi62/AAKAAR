@@ -5,18 +5,27 @@ from django.db import models
 
 class TaskZero(models.Model):
     crid = models.CharField(max_length=10)
-    firstName = models.CharField(max_length = 200)
-    lasttName = models.CharField(max_length = 200)
-    city = models.CharField(max_length = 200)
-    phone = models.CharField(max_length=10)
+    username = models.CharField(max_length = 200)
+    colgName = models.CharField(max_length = 200)
+    state = models.CharField(max_length = 200)
+    mobileNo = models.CharField(max_length=10)
+    dept = models.CharField(max_length = 200)
+    whatsappNo = models.CharField(max_length = 200)
+    pincode = models.CharField(max_length = 200)
+    address = models.CharField(max_length = 200)
+    
 
     def __str__(self):
         return (
-            f"{self.firstName} "
+            f"{self.username} "
             f"{self.crid} "
-            f"{self.lasttName} "
-            f"{self.city} "
-            f"{self.phone} "
+            f"{self.colgName} "
+            f"{self.state} "
+            f"{self.mobileNo} "
+            f"{self.whatsappNo} "
+            f"{self.address} "
+            f"{self.pincode} "
+            f"{self.dept} "
         )
     
 

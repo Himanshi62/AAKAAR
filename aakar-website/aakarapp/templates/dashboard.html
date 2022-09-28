@@ -9,10 +9,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
     <title>AAkar 2022-23 </title>
+    {% load static %}
+  <link href="{% static 'css/dashboard.css' %}" rel="stylesheet">
 </head>
 <body>
     {% load static %}
-    <nav class="navbar navbar-expand-lg bg-info">
+    <nav class="navbar navbar-expand-lg bg-light fixed-top">
         <div class="container-fluid">
         <img src="{% static 'img/logo.png' %}" width="100px" alt="My image">
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -24,8 +26,8 @@
             </ul>
             <div class="profile">
                 {% if user.is_authenticated %}
-                <div class="login d-flex align-items-baseline px-3">
-                    <h5 class="px-2 mx-2">Welcome {{ user.username }}</h5>
+                <div class="login d-flex align-items-center">
+                    <h5 class="px-2 mx-2">Welcome {{name}}</h5>
                     <a href="{% url 'account_logout' %}" class="btn btn-danger">Logout</a>
                 </div>
                 {% else %}
@@ -35,6 +37,51 @@
           </div>
         </div>
       </nav>
+
+<!-- ################################################################################ -->
+<div class="p-5 rounded container" style="margin-top: 120px; background-color: #ebdff2;">
+  <h1>Welcome, {{name}}!!</h1>
+  <p class="lead">Your CR Id is {{CRID}}</p>
+  <a class="btn btn-lg btn-primary" href="/docs/5.2/components/navbar/" role="button">View navbar docs »</a>
+</div>
+
+
+<!-- ######################################################## -->
+
+
+<section style="padding-top: 5px;">
+
+  <div class="container">
+    <h2 style="font-family: MS Reference Sans Serif; font-weight: 600;">INCENTITIVES</h2>
+    <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
+      <div class="feature col" style="background-color: #ebdff2; border-radius: 10px; padding-top: 15px;  padding-right: 15px;" >
+        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="#3D1A43" class="bi bi-gift-fill" viewBox="0 0 16 16">
+          <path d="M3 2.5a2.5 2.5 0 0 1 5 0 2.5 2.5 0 0 1 5 0v.006c0 .07 0 .27-.038.494H15a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h2.038A2.968 2.968 0 0 1 3 2.506V2.5zm1.068.5H7v-.5a1.5 1.5 0 1 0-3 0c0 .085.002.274.045.43a.522.522 0 0 0 .023.07zM9 3h2.932a.56.56 0 0 0 .023-.07c.043-.156.045-.345.045-.43a1.5 1.5 0 0 0-3 0V3zm6 4v7.5a1.5 1.5 0 0 1-1.5 1.5H9V7h6zM2.5 16A1.5 1.5 0 0 1 1 14.5V7h6v9H2.5z"/>
+        </svg>
+        <p style="padding-top: 20px; font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-size: 18px;">Hoodies and exciting gifts to overall top performing CRs</p>
+      </div>
+      <div class="feature col">
+        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="#3D1A43" class="bi bi-house-door-fill" viewBox="0 0 16 16">
+          <path d="M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5z"/>
+        </svg> 
+        <p style="padding-top: 20px; font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-size: 18px;">Free accommodation inside IIT Bombay during the main fest for top performing CRs</p>
+      </div>
+      <div class="feature col" style="background-color: #ebdff2; border-radius: 10px; padding-top: 15px;">
+        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="#3D1A43" class="bi bi-calendar-event-fill" viewBox="0 0 16 16">
+          <path d="M4 .5a.5.5 0 0 0-1 0V1H2a2 2 0 0 0-2 2v1h16V3a2 2 0 0 0-2-2h-1V.5a.5.5 0 0 0-1 0V1H4V.5zM16 14V5H0v9a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2zm-3.5-7h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5z"/>
+        </svg>
+        <p style="padding-top: 20px; font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-size: 18px;">Chance to attend events/workshop during the tenure</p>
+      </div>
+      
+    </div>
+  </div>
+  </section>
+
+
+
+
+
+
 
     <div class="container py-5 my-5 text-center">
       {% if user.is_authenticated %}
