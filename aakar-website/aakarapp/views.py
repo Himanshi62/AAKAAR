@@ -36,7 +36,14 @@ def dashboard(request):
             break
     
     objects = TaskZero.objects.all()
-    return render(request, "dashboard.html", {'email': email, "name":name[0], "picture": picture, "CRID":"AK"+str(current_user_id), "rank":rank, 
-    "objects":objects
+    is_filled = False
+    return render(request, "dashboard.html", 
+    {'email': email,
+     "name":name[0], 
+     "picture": picture, 
+     "CRID":"AK"+str(current_user_id),
+     "rank":rank, 
+     "objects":objects,
+     "is_filled": is_filled
     })
 

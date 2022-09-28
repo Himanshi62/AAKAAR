@@ -42,7 +42,15 @@
 <div class="p-5 rounded container" style="margin-top: 120px; background-color: #ebdff2;">
   <h1>Welcome, {{name}}!!</h1>
   <p class="lead">Your CR Id is {{CRID}}</p>
-  <a class="btn btn-lg btn-primary" href="/docs/5.2/components/navbar/" role="button">View navbar docs »</a>
+  {% if is_filled %}
+	  <p>College : XYZ college</p>
+    <p>State : Delhi</p>
+    <p>Pincode : 1100xx</p>
+    
+  {% else %}
+	  <p>Please update your profile</p>
+  {% endif %}
+  <a class="btn btn-primary" href="/docs/5.2/components/navbar/" role="button">Update profile »</a>
 </div>
 
 
