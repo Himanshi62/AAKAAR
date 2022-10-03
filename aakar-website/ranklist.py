@@ -1,11 +1,11 @@
 import pandas as pd
 import numpy as np
 data = pd.read_csv("crakaar.csv")
-print(data)
+# print(data)
 
 data = pd.read_csv("crakaar.csv")
 df =data.sort_values(by=['Score'], ascending=False)
-print(df)
+# print(df)
 # print(data)
 # CRID = "AK220004"
 

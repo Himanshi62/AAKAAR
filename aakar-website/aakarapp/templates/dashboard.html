@@ -3,18 +3,34 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
-    <title>AAkar 2022-23 </title>
-    {% load static %}
-  <link href="{% static 'css/dashboard.css' %}" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
+    integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+    </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"
+    integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous">
+    </script>
+  <title>AAkar 2022-23 </title>
+  {% load static %}
+  <link href="{% static 'css/home.css' %}" rel="stylesheet">
 </head>
-<body>
-    {% load static %}
-    <nav class="navbar navbar-expand-lg bg-light fixed-top">
+
+<body style="background-color:#ffffff; line-height: 1.3;">
+  {% load static %}
+    <!-- <nav class="navbar navbar-expand-lg bg-light fixed-top">
         <div class="container-fluid">
         <img src="{% static 'img/logo.png' %}" width="100px" alt="My image">
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -36,82 +52,165 @@
             </div>
           </div>
         </div>
+      </nav> -->
+
+
+      <nav class="navbar navbar-expand-lg navbar-white bg-white" style="padding-top: 0px; margin-top: -10px;">
+        <div class="container"> <a href="/"><img src="{% static 'img/logo.png' %}" width="150px"></a> 
+          <button type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
+            class="navbar-toggler"><span class="navbar-toggler-icon"></span></button>
+          <div id="navbarSupportedContent" class="collapse navbar-collapse">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item active"><a href="/" class="nav-link" style="font-size: 18px; color:black"> About </a>
+              </li>
+              <li class="nav-item active"><a href="/#responsibilty" class="nav-link" style="font-size: 18px; color:black">
+                  Responsibilities </a></li>
+              <li class="nav-item active"><a href="/#incentive" class="nav-link" style="font-size: 18px; color:black">
+                  Incentives </a></li>
+              <li class="nav-item active"><a href="/#testinomial" class="nav-link" style="font-size: 18px; color:black">
+                  Testinomials</a></li>
+              <li class="nav-item active"><a href="/#faq" class="nav-link" style="font-size: 18px; color:black"> FAQ </a>
+              </li>
+              <li class="nav-item active"><a href="/#team" class="nav-link" style="font-size: 18px; color:black"> Contact</a>
+              </li>
+            </ul>
+            <!-- <button type="button" class="btn" style="background-color: #355681; font-weight: 600;">REGISTER</button> -->
+            {% if user.is_authenticated %}
+            <a class="btn" style="background-color: #355681; font-weight: 600;" href="{% url 'account_logout' %}">Log
+              out</a>
+            {% else %}
+            <a class="btn" style="background-color: #355681; font-weight: 600; color: rgb(236, 229, 229);"
+              href="{% provider_login_url 'google' %}">Login</a>
+            {% endif %}
+          </div>
+        </div>
       </nav>
 
 <!-- ################################################################################ -->
-<div class="p-5 rounded container" style="margin-top: 120px; background-color: #ebdff2;">
-  <h1>Welcome, {{name}}!!</h1>
+<!-- <div class="p-5 rounded container" style="margin-top: 120px; background-color: #eaeef2;">
+  <h1 style="color: black;">Welcome, {{name}}!!</h1>
   <p class="lead">Your CR Id is {{CRID}}</p>
   {% if is_filled %}
-	  <p>College : XYZ college</p>
-    <p>State : Delhi</p>
-    <p>Pincode : 1100xx</p>
+	  <p>College : {{current_obj.colgName}}</p>
+    <p>State : {{current_obj.state}}</p>
+    <p>Pincode : {{current_obj.pincode}}</p>
     
   {% else %}
 	  <p>Please update your profile</p>
   {% endif %}
-  <a class="btn btn-primary" href="/docs/5.2/components/navbar/" role="button">Update profile »</a>
+  <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+    Update Profile
+  </button>
+</div> -->
+
+
+<!-- ========== ############################## ======================================== -->
+
+
+<div class="container col-xxl-8 px-4">
+  <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+    <div class="col-10 col-sm-8 col-lg-6">
+      <img src="https://img.freepik.com/free-vector/site-stats-concept-illustration_114360-1509.jpg?w=740&t=st=1664708238~exp=1664708838~hmac=951e661e1ee79ba976a59b9f88f166d540f2c440fa5f3a49ce61e72feacfe4fe" class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes" width="700" height="500" loading="lazy">
+    </div>
+    <div class="col-lg-6">
+      <h1 class="display-5 fw-bold lh-1 mb-3">Welcome, {{name}}!!</h1>
+      <!-- <<h1 style="color: black;">Welcome, {{name}}!!</h1> -->
+      <p class="lead">Your CR Id is {{CRID}}</p>
+      {% if is_filled %}
+        <p>College : {{current_obj.colgName}}</p>
+        <p>State : {{current_obj.state}}</p>
+        <p>Pincode : {{current_obj.pincode}}</p>
+        
+      {% else %}
+        <p>Please update your profile</p>
+      {% endif %}
+      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+        Update Profile
+      </button>
+  </div>
+  </div>
 </div>
+
+
+<!-- ========== Update ProFile Form ======================================== -->
+
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">Update Your Profile</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form action="/updateProfile" method="post"> {%csrf_token%}
+          <div class="mb-3">
+            <label for="colName" class="form-label">College Name</label>
+            <input type="text" class="form-control" id="colName" name="colName" aria-placeholder="Your College Name" required>
+          </div>
+
+          <div class="mb-3">
+            <label for="state" class="form-label">State</label>
+            <input type="text" class="form-control" id="state" name="state" aria-placeholder="i.e. Maharastra" required>
+          </div>
+
+          <div class="mb-3">
+            <label for="phoneNo" class="form-label">Phone No.</label>
+            <input type="text" class="form-control" id="phoneNo" name="phoneNo" aria-placeholder="1234567890" required>
+          </div>
+
+          <div class="mb-3">
+            <label for="whatsNo" class="form-label">WhatsApp No.</label>
+            <input type="text" class="form-control" id="whatsNo" name="whatsNo" aria-placeholder="1234567890" required>
+          </div>
+
+          <div class="mb-3">
+            <label for="dept" class="form-label">Your Department</label>
+            <input type="text" class="form-control" id="dept" name="dept" aria-placeholder="i.e. Mechanical" required>
+          </div>
+
+          <div class="mb-3">
+            <label for="pin" class="form-label">PIN Code</label>
+            <input type="text" class="form-control" id="pin" name="pin" aria-placeholder="i.e. 1100xx" required>
+          </div>
+
+          <div class="mb-3">
+            <label for="address" class="form-label">Address</label>
+            <input type="text" class="form-control" id="address" name="address" required>
+          </div>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-success">Submit</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
 
 
 <!-- ######################################################## -->
 
 
-<section style="padding-top: 5px;">
-
-  <div class="container">
-    <h2 style="font-family: MS Reference Sans Serif; font-weight: 600;">INCENTITIVES</h2>
-    <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
-      <div class="feature col" style="background-color: #ebdff2; border-radius: 10px; padding-top: 15px;  padding-right: 15px;" >
-        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="#3D1A43" class="bi bi-gift-fill" viewBox="0 0 16 16">
-          <path d="M3 2.5a2.5 2.5 0 0 1 5 0 2.5 2.5 0 0 1 5 0v.006c0 .07 0 .27-.038.494H15a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h2.038A2.968 2.968 0 0 1 3 2.506V2.5zm1.068.5H7v-.5a1.5 1.5 0 1 0-3 0c0 .085.002.274.045.43a.522.522 0 0 0 .023.07zM9 3h2.932a.56.56 0 0 0 .023-.07c.043-.156.045-.345.045-.43a1.5 1.5 0 0 0-3 0V3zm6 4v7.5a1.5 1.5 0 0 1-1.5 1.5H9V7h6zM2.5 16A1.5 1.5 0 0 1 1 14.5V7h6v9H2.5z"/>
-        </svg>
-        <p style="padding-top: 20px; font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-size: 18px;">Hoodies and exciting gifts to overall top performing CRs</p>
-      </div>
-      <div class="feature col">
-        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="#3D1A43" class="bi bi-house-door-fill" viewBox="0 0 16 16">
-          <path d="M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5z"/>
-        </svg> 
-        <p style="padding-top: 20px; font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-size: 18px;">Free accommodation inside IIT Bombay during the main fest for top performing CRs</p>
-      </div>
-      <div class="feature col" style="background-color: #ebdff2; border-radius: 10px; padding-top: 15px;">
-        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="#3D1A43" class="bi bi-calendar-event-fill" viewBox="0 0 16 16">
-          <path d="M4 .5a.5.5 0 0 0-1 0V1H2a2 2 0 0 0-2 2v1h16V3a2 2 0 0 0-2-2h-1V.5a.5.5 0 0 0-1 0V1H4V.5zM16 14V5H0v9a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2zm-3.5-7h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5z"/>
-        </svg>
-        <p style="padding-top: 20px; font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-size: 18px;">Chance to attend events/workshop during the tenure</p>
-      </div>
-      
+<section >
+  <div class="container" >
+    <div>
+      <h3>Initial Instructions for CRs:</h3>
+      <ul>
+        <li>Aakaar is delighted to have you onboard on the journey of CR Program.</li>
+        <li>For further onboarding, make sure to update your profile.</li>
+        <li>Throughout the CR Program, Aakaar will provide tasks for the CRs, which you have to complete within the prescribed deadline.</li>
+        <li>Tasks will be based on developing strategies for marketing and building connections in your college, in order to organise events and sharing the opportunities in your college.</li>
+        <li>Offer letter will be provided soon</li>
+        <li>Further updates will be given via mail and Dashboard. Stay Tuned!</li>
+      </ul>
     </div>
   </div>
-  </section>
-
-
-
-
-
-
-
-    <div class="container py-5 my-5 text-center">
-      {% if user.is_authenticated %}
-       <div class="dashboard">
-            hey, {{name}}! Welcome to your dashboard. CRID is {{CRID}}, your email is {{email}}. <br>
-            Your rank is {{rank}}
-
-            <h1 class="title">Task 0 : Fill the Basic GForm</h1>
-            <h5 class="form">here is the link <a href="www.google.com">click</a> to the Gform that you need to fill as a part of task 0. Please note that this is madatory task that every CR has to do otherwise your canditure will be rejected. </h5>
-            <img src={{picture}} width="50px" class="rounded-circle" alt="">
-       </div>
-
-       <div class="border-2">
-          <h4 class="text-warning">Checking the Facts</h4>
-          {% for obj in objects %}
-            <h2 class="name">{{obj.crid}}</h2>
-          {% endfor %}
-       </div>
-       {% endif %}
-    </div>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+</section>
+  
 </body>
 </html>
 

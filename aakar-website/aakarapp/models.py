@@ -19,15 +19,15 @@ class TaskZero(models.Model):
 
     def __str__(self):
         return (
-            f"{self.username} "
+            f"{self.username} | "
             f"{self.crid} "
-            f"{self.colgName} "
-            f"{self.state} "
-            f"{self.mobileNo} "
-            f"{self.whatsappNo} "
-            f"{self.address} "
-            f"{self.pincode} "
-            f"{self.dept}"
+            # f"{self.colgName} "
+            # f"{self.state} "
+            # f"{self.mobileNo} "
+            # f"{self.whatsappNo} "
+            # f"{self.address} "
+            # f"{self.pincode} "
+            # f"{self.dept}"
         )
 
 class TaskOne(models.Model):
